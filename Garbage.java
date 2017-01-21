@@ -1,0 +1,3 @@
+class Garbage {
+    String name;
+}
