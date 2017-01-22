@@ -1,47 +1,66 @@
+import java.util.*;
 import Garbage;
 import PaperGarbage;
 import PlasticGarbage;
-import DustbinContentError;
 
 
 class Dustbin {
     
-    String color;
-    PaperGarbage [] paperContent;
-    PlasticGarbage [] plasticContent;
-    Garbage [] houseWasteContent;
+    public String color;
+    public ArrayList [] paperContent; // or ArrayList<Object> = ...
+    public ArrayList [] plasticContent;
+    public ArrayList [] houseWasteContent;
 
-    public static void main(String [] args) {
-        Garbage garbage = new Garbage();
+    public Dustbin(String color) {
+        
+        String color = color;
+        paperContent = new ArrayList[5];
+        plasticContent = new ArrayList[5];
+        houseWasteContent = new ArrayList[5];
+        System.out.println("A new dustbin, which color is: " + color);
+    }
 
-        throwOutGarbage(String garbage) {
-            if (garbage.instanceOf(PlasticGarbage)) {
-                if(garbage.isClean == true) {
-                    plasticContent.add(garbage);
-                }
-                else {
-                    raise DustbinContentError;
-                }
+
+    public void throwOutGarbage(Garbage garbage) {
+        
+        if (garbage instanceOf PlasticGarbage) {
+            if(garbage.isClean == true) {
+                plasticContent.add(garbage);
+                System.out.println(garbage.name + " added to the plastic container.");
             }
-            if(garbage.instanceOf(PaperGarbage)) {
-                if(garbage.isSueezed == true) {
-                    paperContent.add(garbage);
-                }
-                else {
-                    raise DustbinContentError;
-                }
-             }
-            if(garbage.instanceOf(Garbage) {
-                houseWasteContent.add(garbage);
-            }
-                
             else {
-                raise DustbinContentError;
+                System.out.println(garbage.name + " is not clean.");
             }
         }
+        
+        else if(garbage instanceOf PaperGarbage) {
+            if(garbage.isSqueezed == true) {
+                paperContent.add(garbage);
+                System.out.println(garbage.name + " added to the paper container.");
+            }
+            else {
+                System.out.println(garbage.name + " is not squeezed.");
+            }
+            }
+        
+        else if(garbage instanceOf Garbage &&
+                garbage instanceOf PlasticGarbage == false &&
+                garbage instanceOf PaperGarbage == false) {
+            
+            houseWasteContent.add(garbage);
+            System.out.println(garbage.name + " added to the house waste container");
+        }
+        else {
+            System.out.println(garbage.name + " is not a garbage");
+        }
+    }
   
     
-    def empty_contents(self, paper_content = None, plastic_content = None, house_waste_content = None):
-        self.paper_content = []
-        self.plastic_content = []
-        self.house_waste_content = []
+    public void emptyContents() {
+
+        paperContent = null;
+        plasticContent = null;
+        houseWasteContent = null;
+        System.out.println("Dustbin empty");
+    }
+}
