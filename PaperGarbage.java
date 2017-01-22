@@ -1,12 +1,21 @@
 import Garbage;
 
-class PaperGarbage extends Garbage {
-    String name;
-    boolean isSqueezed;
+public class PaperGarbage extends Garbage {
+    
+    
+    public Boolean isSqueezed;
 
-    squeezePaper() {
-        if(isSqueezed == false) {
-            isSqueezed = true;
-        }
+
+    public PaperGarbage(String name, Boolean isSqueezed) {
+        super(name); // or String name = name;
+
+        Boolean isSqueezed = isSqueezed;
+        System.out.println("A new paper garbage: " + name);
+    }
+    
+
+    public void squeezePaper() {
+       this.isSqueezed = true;
+       System.out.println(this.name + " is squeezed");
     }
 }

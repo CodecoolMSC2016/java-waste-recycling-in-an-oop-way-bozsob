@@ -1,12 +1,21 @@
 import Garbage;
 
 class PlasticGarbage extends Garbage {
-    String name;
-    boolean isClean;
+    
+    
+    public Boolean isClean;
 
-    cleanPlastic() {
-        if(isClean == false) {
-            isClean = true;
-        }
+
+    public PlasticGarbage(String name, Boolean isClean) {
+        super(name); // or String name = name;
+
+        Boolean isClean = isClean;
+        System.out.println("A new plastic garbage: " + name);
+    }
+    
+
+    public void cleanPlastic() {
+       this.isClean = true;
+       System.out.println(this.name + " is clean");
     }
 }
