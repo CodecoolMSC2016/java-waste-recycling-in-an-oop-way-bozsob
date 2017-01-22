@@ -1,6 +1,9 @@
 public class Garbage {
-    private String name;
-    
+    protected String name;
+    public Garbage(String name) {
+        System.out.println("A new garbage: " + name);
+    }
+
     // getter
     public String getName() {
         return name;
