@@ -11,7 +11,7 @@ class Dustbin {
     public ArrayList [] plasticContent;
     public ArrayList [] houseWasteContent;
 
-    public Dustbin(String color) {
+    Dustbin(String color) {
         
         String color = color;
         paperContent = new ArrayList[5];

@@ -1,5 +1,5 @@
 public class Garbage {
-    protected String name;
+    String name;
     public Garbage(String name) {
         System.out.println("A new garbage: " + name);
     }
